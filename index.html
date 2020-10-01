@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Record</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.html">
+<link rel="manifest" href="site.html">
+<link rel="mask-icon" href="safari-pinned-tab.html" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/Responsive-footer-1.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+  $.getJSON("https://spreadsheets.google.com/feeds/list/1yuL5NyI5-6XUrhhusJu1r5b0GJ_FXgPJh6yTMnPWuWo/onburjr/public/values?alt=json", function (data) {
+
+      var sheetData = data.feed.entry;
+
+        
+      for (i = 0; i < sheetData.length; i++) {
+
+     
+  var name = data.feed.entry[i].gsx$sub.$t;
+  var price = data.feed.entry[i].gsx$pri.$t;
+  var  paid= data.feed.entry[i].gsx$paid.$t;
+var date = data.feed.entry[i].gsx$date.$t;
+var des = data.feed.entry[i].gsx$des.$t;
+var place = data.feed.entry[i].gsx$place.$t;
+if(price==paid)
+{
+        document.getElementById('demo1234').innerHTML += ('<div class="col-md-6 col-lg-3">'+'<div style="background-color: #00b712;background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);height:260px; width:100%;border-radius:10px;box-shadow:3px 3px 6px grey;margin-top:20px;" class="card-img-top scale-on-hover">'+'<div style=\" font-size:35px;padding-top:40px; \">'+name+'</div>'+'<div style=\" font-size:10px;margin-top:10px; \">'+"Total Price : "+price+'</div>'+'<div style=\" font-size:10px;margin-top:10px;\">'+"Price Paid : "+paid+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Date : "+date+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Place : "+place+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Description : "+des+'</div>'+'</div>'+'</div>');
+} 
+if(price>paid)
+{
+        document.getElementById('demo1234').innerHTML += ('<div class="col-md-6 col-lg-3">'+'<div style="background-color: #6b0f1a;background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);height:260px; width:100%;border-radius:10px;box-shadow:3px 3px 6px grey;margin-top:20px;" class="card-img-top scale-on-hover">'+'<div style=\" font-size:35px;padding-top:40px; \">'+name+'</div>'+'<div style=\" font-size:10px;margin-top:10px; \">'+"Total Price : "+price+'</div>'+'<div style=\" font-size:10px;margin-top:10px;\">'+"Price Paid : "+paid+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Date : "+date+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Place : "+place+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Description : "+des+'</div>'+'</div>'+'</div>');
+} 
+if(price<paid)
+{
+        document.getElementById('demo1234').innerHTML += ('<div class="col-md-6 col-lg-3">'+'<div style="background-color: #6b0f1a;background-color: #fbb034;background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);height:260px; width:100%;border-radius:10px;box-shadow:3px 3px 6px grey;margin-top:20px;" class="card-img-top scale-on-hover">'+'<div style=\" font-size:35px;padding-top:40px; \">'+name+'</div>'+'<div style=\" font-size:10px;margin-top:10px; \">'+"Total Price : "+price+'</div>'+'<div style=\" font-size:10px;margin-top:10px;\">'+"Price Paid : "+paid+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Date : "+date+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Place : "+place+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Description : "+des+'</div>'+'</div>'+'</div>');
+} 
+ }
+    });
+
+
+  
+  </script>
+
+
+    <script type="text/javascript">
+            document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            alert('not allowed');
+            return false;
+        } else {
+            return true;
+        }
+};
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</head>
+<body>
+    <main class="page projects-page">
+        <section class="portfolio-block projects-cards">
+            <div class="container">
+               <center>
+           <span class="row" id="demo1234" style="color: #ffffff;"> </span>
+                    </center>
+                    </div>
+            </section>
+        </main>
+        
+</body>
+
+</html>
