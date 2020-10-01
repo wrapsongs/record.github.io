@@ -32,7 +32,7 @@ var des = data.feed.entry[i].gsx$des.$t;
 var place = data.feed.entry[i].gsx$place.$t;
 if(price==paid)
 {
-        document.getElementById('demo1234').innerHTML += ('<div class="col-md-6 col-lg-3">'+'<div style="background-color: #00b712;background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);height:260px; width:100%;border-radius:10px;box-shadow:3px 3px 6px grey;margin-top:20px;" class="card-img-top scale-on-hover">'+'<div style=\" font-size:35px;padding-top:40px; \">'+name+'</div>'+'<div style=\" font-size:10px;margin-top:10px; \">'+"Total Price : "+price+'</div>'+'<div style=\" font-size:10px;margin-top:10px;\">'+"Price Paid : "+paid+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Date : "+date+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Place : "+place+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Description : "+des+'</div>'+'</div>'+'</div>');
+        document.getElementById('demo1234').innerHTML += ('<div class="col-md-2 col-lg-3">'+'<div style="background-color: #00b712;background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);height:260px; width:100%;border-radius:10px;box-shadow:3px 3px 6px grey;margin-top:20px;" class="card-img-top scale-on-hover">'+'<div style=\" font-size:35px;padding-top:40px; \">'+name+'</div>'+'<div style=\" font-size:10px;margin-top:10px; \">'+"Total Price : "+price+'</div>'+'<div style=\" font-size:10px;margin-top:10px;\">'+"Price Paid : "+paid+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Date : "+date+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Place : "+place+'</div>'+'<div style=\" font-size:8px;margin-top:10px; \">'+"Description : "+des+'</div>'+'</div>'+'</div>');
 } 
 if(price>paid)
 {
